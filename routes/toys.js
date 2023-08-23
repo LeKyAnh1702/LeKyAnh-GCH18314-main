@@ -1,6 +1,7 @@
 var express = require('express');
 const ToyModel = require('../models/ToyModel');
 const CategoryModel = require('../models/CategoryModel');
+const BrandModel = require('../models/BrandModel');
 var router = express.Router();
 router.get('/', async (req, res) => {
    var toys = await ToyModel.find();
@@ -18,6 +19,10 @@ router.get('/add', async(req, res) => {
    var categories = await CategoryModel.find();
    res.render('toys/toysAdd',{category: categories});
 });
+router.get('/add', async(req, res) => {
+   var categories = await BrandModel.find();
+   res.render('toys/toysAdd',{brand: brands});
+});
 
 router.post('/add', async (req, res) => {
    var toys = req.body;
@@ -32,6 +37,12 @@ router.get('/edit/:id', async (req, res) => {
    var categories = await CategoryModel.find();
    var toys = await ToyModel.findById(id);
    res.render('toys/toysEdit', { toys: toys, category: categories });
+});
+router.get('/edit/:id', async (req, res) => {
+   var id = req.params.id;
+   var categories = await BrandModel.find();
+   var toys = await ToyModel.findById(id);
+   res.render('toys/toysEdit', { toys: toys, brand: brands });
 });
 
 router.post('/edit/:id', async (req, res) => {
