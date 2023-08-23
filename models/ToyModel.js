@@ -7,6 +7,7 @@ var ToySchema = mongoose.Schema({
    color: String,
    manufacture: String,
    detail: String,
+   test: String,
    image: String,
 });
 const ToyModel = mongoose.model('toy', ToySchema, 'toy');
