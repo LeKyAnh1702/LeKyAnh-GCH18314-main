@@ -3,7 +3,6 @@ var ToySchema = mongoose.Schema({
    name: String,
    mfg: Date,
    category: String,
-   brand: String,
    color: String,
    manufacture: String,
    detail: String,
