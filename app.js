@@ -7,7 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 //khai báo router (1)
 var toysRouter = require('./routes/toys');
-
+var categoryRouter = require('./routes/category');
+var brandRouter = require('./routes/brand');
 var app = express();
 
 //khai báo body-parser
@@ -39,7 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 //khai báo router (2)
 app.use('/toys', toysRouter);
-
+app.use('/category', categoryRouter);
+app.use('/brand', brandRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -23,8 +23,24 @@
                {{/each}}
             
             </select>
+            <a class="btn btn-danger" href="/category/add">Add</a>
       </div>
-      
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Brand</label><br>
+         
+         <select class="form-control" name="brand" id="brand">
+               <option value="#">
+                  Select brand
+               </option>
+               {{#each brand }}
+                <option value={{name}}>
+                     {{name}}
+               </option>
+               {{/each}}
+            
+            </select>
+             <a class="btn btn-danger" href="/brand/add">Add</a>
+      </div>
       <div class="form-group mt-3">
          <label class="h5 text text-success" for="">Color</label>
          <input class="form-control" type="text" name="color" required>
